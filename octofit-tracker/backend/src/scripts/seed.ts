@@ -21,12 +21,12 @@ export async function seed() {
   try {
     const octocats = await Team.findOneAndUpdate(
       { name: 'Octocats' },
-      { $set: { name: 'Octocats', mascot: 'Mona' } },
+      { $set: { name: 'Octocats', mascot: 'Mona' }, $setOnInsert: { members: [] } },
       { upsert: true, new: true, setDefaultsOnInsert: true },
     );
     const robocats = await Team.findOneAndUpdate(
       { name: 'Robocats' },
-      { $set: { name: 'Robocats', mascot: 'Hubot' } },
+      { $set: { name: 'Robocats', mascot: 'Hubot' }, $setOnInsert: { members: [] } },
       { upsert: true, new: true, setDefaultsOnInsert: true },
     );
     const mona = await upsertDemoUser('Mona', 'mona@example.com', octocats._id, 'endurance');

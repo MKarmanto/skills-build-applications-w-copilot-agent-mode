@@ -36,6 +36,12 @@ OctoFit Tracker is a three-tier application for a school fitness program. The st
 - Leaderboard approach: Aggregate each team’s activity points, sort descending by total, and assign a 1-based rank to each team entry using the team name and total points values expected by the contract.
 - Workout suggestions approach: Match the requested user email to a seeded user, inspect recent activity history or fitnessGoal, and return the highest-priority workout suggestion whose focus aligns with the user’s pattern, including a reason string explaining the match.
 
+## Current branch status
+
+This branch is `build-octofit-app`. The repository is in the starter implementation state: the data contracts are incomplete, the backend service layer is still stubbed, and the frontend renders placeholder content instead of live API-backed UI.
+
+The correct workflow is a narrow red-green loop: define the required schema rules, implement the backend service behavior, then finish the UI states that consume those APIs.
+
 ## Test plan
 
 - Data-tier command: `npm run test:data --prefix octofit-tracker/backend`  
